@@ -49,6 +49,13 @@ func main() {
 				fmt.Printf("%w", err.Error())
 				return c.String(400, "Bad request")
 			}
+
+			if req.Name == "akaporn" {
+
+				c.String(400, "Rollback")
+				return fmt.Errorf("Rollback")
+			}
+
 			return c.String(http.StatusOK, "OK")
 		})
 	})
